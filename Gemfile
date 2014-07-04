@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.4'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -50,3 +50,7 @@ gem 'angularjs-rails'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
+# File attachment library for Active Record
+gem "paperclip", "~> 4.1"
+
+gem "google_custom_search_api"
