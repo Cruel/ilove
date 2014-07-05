@@ -54,3 +54,6 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem "paperclip", "~> 4.1"
 
 gem "google_custom_search_api"
+
+# Windows has no timezone data
+gem "tzinfo-data", platforms: [:mswin, :mingw]

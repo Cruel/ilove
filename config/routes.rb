@@ -1,6 +1,10 @@
 Ilove::Application.routes.draw do
   resources :images
   
+  scope :api do
+    resources :images, only: [:index], defaults: {format: :json}
+  end
+  
   get "images/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

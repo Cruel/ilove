@@ -1,7 +1,9 @@
 class ImagesController < ApplicationController
+  respond_to :json
   
   def index
-    @images = Image.all
+    images = Image.all
+    respond_with images.to_json(:methods => [:image_url, :image_thumb_url])
   end
   
   def new
@@ -20,9 +22,7 @@ class ImagesController < ApplicationController
       "imgSize"    => "xlarge",
       "safe"       => "off",   # SafeSearch level (high | medium | off)
     })
-    #render plain: params[:image].inspect
     img = test["items"][0]
-    #render plain: img["link"]
     @image.image_remote_url = img["link"]
     @image.save
     redirect_to @image
