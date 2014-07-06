@@ -47,6 +47,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'angularjs-rails'
+gem 'angular-rails-templates'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
