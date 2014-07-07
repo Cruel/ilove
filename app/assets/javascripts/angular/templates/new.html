@@ -1,5 +1,22 @@
-<h2>So new!</h2>
-<form action="/api/images" method="post">
-	<input type="text" name="image[word]" placeholder="text" />
-	<input type="submit" value="Create" class="btn btn-info" />
+<form ng-submit="processForm()">
+	I love <input type="text" name="image[word]" placeholder="" ng-model="newform.image.word" required />
+	<button class="btn btn-danger" ng-disabled="newImage && !newImage.id">
+		<span ng-show="!newImage || newImage.id">Make Love</span>
+		<span ng-show="newImage && !newImage.id">Making Sweet Love...</span>
+	</button>
+	<a href="/" class="btn btn-info">Back</a>
 </form>
+
+<div id="newimage" ng-show="newImage.id">
+	<img ng-src="{{ newImage.image_url }}" />
+	<div>
+		<div>
+			Full Image <input type="text" value="{{ location.origin + newImage.image_url.split('?')[0] }}" />
+			<button class="btn btn-xs btn-default">Copy</button>
+		</div>
+		<div>
+			Thumbnail <input type="text" value="{{ location.origin + newImage.image_thumb_url.split('?')[0] }}" />
+			<button class="btn btn-xs btn-default">Copy</button>
+		</div>
+	</div>
+</div>
