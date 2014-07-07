@@ -5,5 +5,6 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   $routeProvider.
     when('/', {templateUrl: 'index.html'}).
     when('/new', {templateUrl: 'new.html'}).
+    when('/image/:id', {templateUrl: 'show.html', controller:'ImagesCtrl'}).
     otherwise({redirectTo: '/'});
 }]);

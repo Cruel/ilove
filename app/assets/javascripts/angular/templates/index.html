@@ -1,11 +1,11 @@
-<h1>Title!</h1>
+<a href="/new" class="btn btn-info text-center">New</a>
 
-<a href="/new" class="btn btn-info">New</a>
-
-<div id="images" ng-controller="ImagesCtrl">
+<div id="images">
 	<ul class="list-unstyled">
 		<li ng-repeat="image in images">
-			<img ng-src="{{image.image_thumb_url}}" />
+			<a href="/image/{{ image.id }}">
+				<img ng-src="{{ image.image_thumb_url }}" />
+			</a>
 		</li>
 	</ul>
 </div>
