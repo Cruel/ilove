@@ -12,11 +12,6 @@ app.factory('Image', ['$resource', function($resource) {
   	return this.service.remove({imageId: id});
   };
   Image.prototype.save = function(data) {
-  	/*
-  	console.log(data);
-  	var newImage = new this.service({test:23});
-  	newImage.$save();
-  	return newImage;*/
   	return this.service.save(data);
   };
   return new Image;

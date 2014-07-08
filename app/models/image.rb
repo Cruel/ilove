@@ -1,4 +1,5 @@
 class Image < ActiveRecord::Base
+  # TODO: Restrict attribute fetching, e.g. don't return IP info
   attr_reader :image_remote_url
   
   has_attached_file :image, :styles => {:thumb => "200x200>"},
