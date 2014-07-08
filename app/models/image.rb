@@ -19,7 +19,7 @@ class Image < ActiveRecord::Base
     })
     img = search_results["items"][0]
 
-    file = Paperclip::TempfileFactory.new.generate('test')
+    file = Paperclip::TempfileFactory.new.generate(img["link"])
     image = MiniMagick::Image.open(img["link"])
     image.combine_options('convert') do |c|                                                                                  
       c.gravity 'South'   
