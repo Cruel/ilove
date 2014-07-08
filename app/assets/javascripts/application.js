@@ -17,6 +17,10 @@
 //= require angular-resource
 //= require angular-route
 //
+// Bower components
+//= require zeroclipboard/dist/ZeroClipboard.js
+//= require ng-clip/src/ngClip.js
+//
 //= require angular-rails-templates
 //= require_tree ./angular/templates
 //

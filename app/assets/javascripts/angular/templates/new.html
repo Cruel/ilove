@@ -9,14 +9,14 @@
 
 <div id="newimage" ng-show="newImage.id">
 	<img ng-src="{{ newImage.image_url }}" />
-	<div>
+	<div ng-init="tooltip='Copy to clipboard'">
 		<div>
-			Full Image <input type="text" value="{{ location.origin + newImage.image_url.split('?')[0] }}" />
-			<button class="btn btn-xs btn-default">Copy</button>
+			Full Image <input type="text" ng-model="orig_url" />
+			<button class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="right" title="{{tooltip}}" clip-copy="orig_url" ng-click="tooltip='Copied'" ng-mouseleave="tooltip='Copy to clipboard'">Copy</button>
 		</div>
 		<div>
-			Thumbnail <input type="text" value="{{ location.origin + newImage.image_thumb_url.split('?')[0] }}" />
-			<button class="btn btn-xs btn-default">Copy</button>
+			Thumbnail <input type="text" ng-model="thumb_url" />
+			<button class="btn btn-xs btn-default" data-toggle="tooltip" data-placement="right" title="{{tooltip}}" clip-copy="thumb_url">Copy</button>
 		</div>
 	</div>
 </div>

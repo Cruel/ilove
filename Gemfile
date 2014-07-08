@@ -54,6 +54,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 # File attachment library for Active Record
 gem "paperclip", "~> 4.1"
 
+gem "bower-rails", "~> 0.7.3"
+
 gem "google_custom_search_api"
 
 # Windows has no timezone data
