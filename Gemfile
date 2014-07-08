@@ -60,3 +60,4 @@ gem "google_custom_search_api"
 
 # Windows has no timezone data
 gem "tzinfo-data", platforms: [:mswin, :mingw]
+gem 'mini_magick'
