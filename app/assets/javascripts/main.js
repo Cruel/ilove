@@ -9,9 +9,3 @@ app.config(['$routeProvider','$locationProvider','ngClipProvider', function($rou
     when('/image/:id', {templateUrl: 'show.html', controller:'ImagesCtrl'}).
     otherwise({redirectTo: '/'});
 }]);
-
-// Bootstrap tooltips
-$('body').css('background','#eee').tooltip({
-    selector: 'button'
-});
-
