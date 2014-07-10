@@ -9,13 +9,17 @@ app.controller('ImagesCtrl', ['$scope', 'Image', '$routeParams', function($scope
 	$scope.location = location;
 
 	$scope.processForm = function() {
+		$scope.errors = null;
 		$scope.newImage = Image.save($scope.newform);
 		$scope.newImage.$promise.then(function(data){
 			$scope.orig_url = location.origin + data.image_url.split('?')[0];
 			$scope.thumb_url = location.origin + data.image_thumb_url.split('?')[0];
+			$scope.images.push($scope.newImage);
+		}, function(error){
+			$scope.errors = "Failed to make love. Try to love something else.";
+			$scope.newImage = null;
 		});
 		$scope.newform = {};
-		$scope.images.push($scope.newImage);
 	};
 	
 	// Bootstrap tooltips
